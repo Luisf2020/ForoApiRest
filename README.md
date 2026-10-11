@@ -1,64 +1,75 @@
 # Forum REST API
 
-![Java](https://img.shields.io/badge/Java-Backend-ED8B00?logo=openjdk&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-REST_API-6DB33F?logo=springboot&logoColor=white)
-![REST](https://img.shields.io/badge/Architecture-REST-2563eb)
+![stack: Java](https://img.shields.io/badge/stack--Java-0d9488?style=flat-square) ![stack: Spring Boot](https://img.shields.io/badge/stack--Spring%20Boot-0d9488?style=flat-square) ![stack: REST](https://img.shields.io/badge/stack--REST-0d9488?style=flat-square) ![IA: asistido](https://img.shields.io/badge/IA--asistido-6366f1?style=flat-square)
 
-API REST desarrollada en **Java con Spring Boot** para modelar la lógica principal de un foro mediante recursos de usuarios, publicaciones y comentarios.
+API REST en Java con Spring Boot que modela la logica principal de un foro: usuarios, publicaciones y comentarios.
 
-## Funcionalidades
+**Tipo:** API REST (Java / Spring Boot) · **Complejidad:** Intermedio
 
-- Gestión de usuarios.
-- Gestión de publicaciones.
-- Gestión de comentarios.
-- Endpoints HTTP organizados por controladores.
-- Separación entre modelos y capa de exposición REST.
-- Estructura preparada para evolución hacia persistencia, autenticación y validación.
+## Problema que resuelve
 
-## Arquitectura
+Exponer las operaciones basicas de un foro como recursos HTTP de forma ordenada, sin mezclar la logica de dominio con la capa de exposicion.
 
-```text
-ForoApiRest/
-└── src/main/java/com/foro/
-    ├── ForoApiRestApplication.java
-    ├── Usuario.java
-    ├── UsuarioController.java
-    ├── Publicacion.java
-    ├── PublicacionController.java
-    ├── Comentario.java
-    └── ComentarioController.java
-```
+## Solucion implementada
+
+Controladores REST separados por recurso sobre un modelo de dominio simple (Usuario, Publicacion, Comentario), listo para incorporar persistencia.
+
+### Funcionalidades principales
+
+- Endpoints REST por recurso (usuarios, publicaciones, comentarios)
+- Separacion entre modelo y controladores
+- Estructura de proyecto Spring Boot
+- Punto de partida para persistencia y validacion
 
 ## Stack
 
 - Java
 - Spring Boot
 - REST
-- Maven / configuración Spring
 
-## Objetivo técnico
+## Estructura
 
-Este proyecto demuestra fundamentos de desarrollo backend con Spring Boot: modelado de recursos, controladores REST, separación de responsabilidades y diseño de endpoints.
+```
+src/main/java/com/foro/
+  ForoApiRestApplication.java
+  Usuario.java / Publicacion.java / Comentario.java
+  UsuarioController.java / PublicacionController.java / ComentarioController.java
+src/main/resources/application.properties
+```
 
-## Ejecución
+## Puesta en marcha
 
-Clona el repositorio y abre el proyecto Java dentro de la carpeta `ForoApiRest` en IntelliJ IDEA, VS Code o tu IDE preferido. Ejecuta `ForoApiRestApplication` como aplicación Spring Boot.
+```bash
+# Requiere JDK 17+ y Maven
+cd ForoApiRest
+mvn spring-boot:run
+```
 
-## Evolución recomendada
+## Complejidad del proyecto
 
-- Spring Data JPA.
-- PostgreSQL o MySQL.
-- DTOs y validación con Bean Validation.
-- Manejo global de excepciones.
-- Autenticación JWT y autorización por roles.
-- OpenAPI / Swagger.
-- Pruebas unitarias y de integración.
+**Nivel: Intermedio** — Servicio HTTP con varios recursos y capas; sin base de datos todavia.
+
+El nivel describe la complejidad tecnica del proyecto, no el grado de dominio de quien lo escribio.
+
+## Despliegue
+
+Servicio backend; se ejecuta con la JVM, no se despliega como pagina web.  
+El codigo fuente esta disponible en este repositorio.
+
+## Transparencia sobre IA
+
+Este proyecto se desarrollo con asistencia de inteligencia artificial (generacion de codigo,
+revision y documentacion). El codigo fue leido, ejecutado y probado manualmente. No se declaran
+clientes, metricas ni resultados que no puedan verificarse.
 
 ## Autor
 
-**Luis Felipe Zuniga León**  
-Ingeniería de Sistemas · Desarrollo de Software · Backend
+**Luis Felipe Zuniga Leon** — Desarrollador de software asistido por IA
+
+- GitHub: <https://github.com/Luisf2020>
+- Correo: developerluis2@gmail.com
+- WhatsApp: +504 3237 0056
 
 ---
 
-Proyecto de portafolio enfocado en diseño de APIs REST con Java y Spring Boot.
+_Proyecto de portafolio. El desarrollo se apoyo en herramientas de IA bajo revision tecnica humana._
